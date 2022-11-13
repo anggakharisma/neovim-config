@@ -15,8 +15,10 @@ vim.opt.termguicolors = true
 
 vim.o.updatetime = 300
 vim.incsearch = false
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = 'no'
 
+vim.cmd('set autoindent expandtab tabstop=2 shiftwidth=2')
+vim.cmd('set autoindent')
 vim.cmd('set number relativenumber')
 vim.cmd('set nu rnu')
 vim.cmd('hi Pmenu guibg=NONE guifg=NONE')
