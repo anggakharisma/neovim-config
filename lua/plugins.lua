@@ -7,6 +7,8 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
 
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
@@ -15,6 +17,11 @@ require('packer').startup(function(use)
 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
+
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
   use {
   'nvim-tree/nvim-tree.lua',
