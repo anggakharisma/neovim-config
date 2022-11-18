@@ -18,6 +18,8 @@ require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
 
+  use 'numToStr/Comment.nvim'
+  use "lukas-reineke/lsp-format.nvim"
 
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
@@ -44,5 +46,5 @@ end)
 require("nvim-tree").setup()
 require("colorizer").setup()
 require("bufferline").setup()
-
-
+require('Comment').setup()
+require('lsp-format').setup()
