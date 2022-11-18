@@ -12,7 +12,6 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
-
 vim.o.updatetime = 300
 vim.incsearch = false
 vim.wo.signcolumn = 'no'
@@ -33,16 +32,7 @@ vim.cmd('hi cursorline guibg=#252e47')
 vim.cmd('set cursorline')
 vim.cmd('hi NonText guifg=bg')
 
-
-map('i', 'kk', '<Esc>')
-
--- Move around splits
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
-
-map('n', '<leader>s', ':w<CR>')
+vim.cmd('hi Visual guibg=#60ff60 guifg=NONE')
 
 -- NvimTree
 require("nvim-tree").setup()
