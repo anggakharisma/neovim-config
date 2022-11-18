@@ -49,3 +49,6 @@ require("nvim-tree").setup()
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+
+vim.cmd('hi TelescopeMatching guibg=#60ff60 guifg=black')
+vim.cmd('hi TelescopeSelection guibg=#60ff60 guifg=black')
