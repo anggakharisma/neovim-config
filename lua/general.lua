@@ -1,13 +1,5 @@
 vim.g.mapleader = ','
 
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
@@ -33,12 +25,6 @@ vim.cmd('set cursorline')
 vim.cmd('hi NonText guifg=bg')
 
 vim.cmd('hi Visual guibg=#60ff60 guifg=NONE')
-
--- NvimTree
-require("nvim-tree").setup()
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 vim.cmd('hi TelescopeMatching guibg=#60ff60 guifg=black')
 vim.cmd('hi TelescopeSelection guibg=#60ff60 guifg=black')
