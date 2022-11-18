@@ -5,6 +5,7 @@ local function map(mode, lhs, rhs, opts)
   end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -24,9 +25,9 @@ map('n', '<C-l>', '<C-w>l')
 
 map('n', '<leader>s', ':w<CR>')
 map('n', '<leader>w', ':w<CR>')
-map('n', '<C-q>', ':q!')
+map('n', '<C-q>', ':q!<CR>')
 
 -- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
+map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
+map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
