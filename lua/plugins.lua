@@ -21,7 +21,7 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
   use "lukas-reineke/lsp-format.nvim"
 
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
   use {
     "windwp/nvim-autopairs",
@@ -30,17 +30,19 @@ require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
+  use "lukas-reineke/indent-blankline.nvim"
 
-  use 'NvChad/nvim-colorizer.lua'
-}
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+
+    use 'NvChad/nvim-colorizer.lua'
+  }
 end)
 
 require("nvim-tree").setup()
@@ -48,3 +50,12 @@ require("colorizer").setup()
 require("bufferline").setup()
 require('Comment').setup()
 require('lsp-format').setup()
+
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#6b6b6a gui=nocombine]]
+
+require("indent_blankline").setup {
+  space_char_blankline = " ",
+  char_highlight_list = {
+    "IndentBlanklineIndent1"
+  }
+}
