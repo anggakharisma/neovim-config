@@ -23,10 +23,7 @@ require('packer').startup(function(use)
 
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
+  use "windwp/nvim-autopairs"
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -50,6 +47,7 @@ require("colorizer").setup()
 require("bufferline").setup()
 require('Comment').setup()
 require('lsp-format').setup()
+require('nvim-autopairs').setup()
 
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#6b6b6a gui=nocombine]]
 

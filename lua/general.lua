@@ -21,7 +21,7 @@ vim.cmd('highlight LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NON
 
 vim.cmd('hi cursorline guibg=#252e47')
 vim.cmd('hi NonText guifg=bg')
-vim.cmd('hi Visual guibg=#60ff60 guifg=NONE')
+vim.cmd('hi Visual guibg=#252e47 guifg=NONE')
 vim.cmd('hi TelescopeMatching guibg=#60ff60 guifg=black')
 vim.cmd('hi TelescopeSelection guibg=#60ff60 guifg=black')
 vim.cmd('hi Pmenu guibg=NONE guifg=NONE')

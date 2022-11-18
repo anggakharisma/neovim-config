@@ -101,11 +101,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -113,17 +108,14 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['tsserver'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  flags = lsp_flags
 }
 
 require('lspconfig')['sumneko_lua'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  flags = lsp_flags
 }
 
-require 'lspconfig'.rust_analyzer.setup {
+require('lspconfig')['rust_analyzer'].setup {
   capabilities = capabilities,
-  on_attach = on_attach,
-  flags = lsp_flags
+  on_attach = on_attach
 }
