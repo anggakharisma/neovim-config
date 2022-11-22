@@ -31,3 +31,8 @@ map('n', '<C-q>', ':q!<CR>')
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
 map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
+
+vim.cmd('nnoremap <M-j>    :resize -2<CR>')
+vim.cmd('nnoremap <M-k>    :resize +2<CR>')
+vim.cmd('nnoremap <M-h>    :vertical resize -2<CR>')
+vim.cmd('nnoremap <M-l>    :vertical resize +2<CR>')

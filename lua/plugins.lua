@@ -42,7 +42,11 @@ require('packer').startup(function(use)
   }
 end)
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  view = {
+    adaptive_size = true
+  }
+})
 require("colorizer").setup()
 require("bufferline").setup()
 require('Comment').setup()
