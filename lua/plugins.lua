@@ -13,7 +13,6 @@ require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
 
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
