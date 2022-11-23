@@ -8,6 +8,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
 
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'lewis6991/gitsigns.nvim'
 
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
@@ -51,6 +52,7 @@ require("bufferline").setup()
 require('Comment').setup()
 require('lsp-format').setup()
 require('nvim-autopairs').setup()
+require('gitsigns').setup()
 
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#6b6b6a gui=nocombine]]
 

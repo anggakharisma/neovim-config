@@ -6,7 +6,6 @@ vim.opt.termguicolors = true
 
 vim.o.updatetime = 300
 vim.incsearch = false
-vim.wo.signcolumn = 'no'
 
 vim.cmd('set autoindent expandtab tabstop=2 shiftwidth=2')
 vim.cmd('set autoindent')
@@ -28,5 +27,4 @@ vim.cmd('hi Pmenu guibg=NONE guifg=NONE')
 vim.cmd('hi PmenuSel guibg=#60ff60 guifg=black')
 vim.cmd('hi PmenuSbar guibg=#60ff60 guifg=black')
 vim.cmd('hi PmenuThumb guibg=#60ff60 guifg=black')
-
---- asdasd asdasd
+vim.cmd('hi SignColumn guibg=NONE')
