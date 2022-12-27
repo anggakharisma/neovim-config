@@ -10,6 +10,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'lewis6991/gitsigns.nvim'
 
+
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
@@ -40,6 +41,10 @@ require('packer').startup(function(use)
 
     use 'NvChad/nvim-colorizer.lua'
   }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 end)
 
 require("nvim-tree").setup({
@@ -47,6 +52,7 @@ require("nvim-tree").setup({
     adaptive_size = true
   }
 })
+
 require("colorizer").setup()
 require("bufferline").setup()
 require('Comment').setup()
