@@ -49,8 +49,8 @@ end)
 
 require("nvim-tree").setup({
   view = {
-    adaptive_size = true
-  }
+    adaptive_size = true,
+  };
 })
 
 require("colorizer").setup()
@@ -60,7 +60,7 @@ require('lsp-format').setup()
 require('nvim-autopairs').setup()
 require('gitsigns').setup()
 
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#6b6b6a gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#696969 gui=nocombine]]
 
 require("indent_blankline").setup {
   space_char_blankline = " ",
@@ -68,3 +68,8 @@ require("indent_blankline").setup {
     "IndentBlanklineIndent1"
   }
 }
+
+local function open_nvim_tree()
+  require("nvim-tree.api").tree.open()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
