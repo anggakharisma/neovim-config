@@ -32,7 +32,7 @@ vim.cmd('hi PmenuSbar guibg=#60ff60 guifg=black')
 vim.cmd('hi PmenuThumb guibg=#60ff60 guifg=black')
 vim.cmd('hi SignColumn guibg=NONE')
 
----vim.cmd("highlight NvimTreeNormal guibg=#000a0e")
+vim.cmd("highlight NvimTreeNormal guibg=#000a0e")
 vim.cmd("hi NonText guifg=NONE")
 vim.cmd("hi DiffAdd guibg=NONE guifg=#60ff60")
 vim.cmd("hi DiffChange guibg=NONE guifg=#60ff60")

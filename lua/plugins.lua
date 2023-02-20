@@ -55,7 +55,12 @@ require("nvim-tree").setup({
 })
 
 require("colorizer").setup()
-require("bufferline").setup()
+require'bufferline'.setup({
+  options = {
+    separator_style = "thick",
+    offsets = {{filetype = "NvimTree", text = "Directory", text_align = "center"}},
+  },
+})
 require('Comment').setup()
 require('lsp-format').setup()
 require('nvim-autopairs').setup()
