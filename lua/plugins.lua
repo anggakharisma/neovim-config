@@ -48,6 +48,7 @@ require('packer').startup(function(use)
 end)
 
 require("nvim-tree").setup({
+  update_cwd = true,
   view = {
     adaptive_size = true,
   };
@@ -60,7 +61,7 @@ require('lsp-format').setup()
 require('nvim-autopairs').setup()
 require('gitsigns').setup()
 
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#696969 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#013d4f gui=nocombine]]
 
 require("indent_blankline").setup {
   space_char_blankline = " ",
