@@ -18,6 +18,7 @@ require('packer').startup(function(use)
 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
+  use 'mfussenegger/nvim-jdtls'
 
   use 'numToStr/Comment.nvim'
   use "lukas-reineke/lsp-format.nvim"
@@ -49,9 +50,6 @@ end)
 
 require("nvim-tree").setup({
   update_cwd = true,
-  view = {
-    adaptive_size = true,
-  };
 })
 
 require("colorizer").setup()

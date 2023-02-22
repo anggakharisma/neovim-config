@@ -1,3 +1,14 @@
+local function clamp(component)
+  return math.min(math.max(component, 0), 255)
+end
+function LightenDarkenColor(col, amt)
+  local num = tonumber(col, 16)
+  local r = math.floor(num / 0x10000) + amt
+  local g = (math.floor(num / 0x100) % 0x100) + amt
+  local b = (num % 0x100) + amt
+  return string.format("%#x", clamp(r) * 0x10000 + clamp(g) * 0x100 + clamp(b))
+end
+
 vim.g.mapleader = ','
 
 vim.g.loaded_netrw = 1
@@ -21,8 +32,8 @@ vim.cmd('set undodir=~/.vim/undodir')
 vim.cmd('set cursorline')
 vim.cmd('highlight LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE')
 
-
-vim.cmd('hi cursorline guibg=#252e47')
+vim.cmd('hi CursorLine guibg=#252e47')
+vim.cmd('hi Normal guibg=bg')
 vim.cmd('hi Visual guibg=#252e47 guifg=NONE')
 vim.cmd('hi TelescopeMatching guibg=#60ff60 guifg=black')
 vim.cmd('hi TelescopeSelection guibg=#60ff60 guifg=black')
@@ -32,7 +43,7 @@ vim.cmd('hi PmenuSbar guibg=#60ff60 guifg=black')
 vim.cmd('hi PmenuThumb guibg=#60ff60 guifg=black')
 vim.cmd('hi SignColumn guibg=NONE')
 
-vim.cmd("highlight NvimTreeNormal guibg=#000a0e")
+vim.cmd("highlight NvimTreeNormal guibg=#1C1526")
 vim.cmd("hi NonText guifg=NONE")
 vim.cmd("hi DiffAdd guibg=NONE guifg=#60ff60")
 vim.cmd("hi DiffChange guibg=NONE guifg=#60ff60")
