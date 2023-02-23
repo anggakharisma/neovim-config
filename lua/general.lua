@@ -1,14 +1,3 @@
-local function clamp(component)
-  return math.min(math.max(component, 0), 255)
-end
-function LightenDarkenColor(col, amt)
-  local num = tonumber(col, 16)
-  local r = math.floor(num / 0x10000) + amt
-  local g = (math.floor(num / 0x100) % 0x100) + amt
-  local b = (num % 0x100) + amt
-  return string.format("%#x", clamp(r) * 0x10000 + clamp(g) * 0x100 + clamp(b))
-end
-
 vim.g.mapleader = ','
 
 vim.g.loaded_netrw = 1
