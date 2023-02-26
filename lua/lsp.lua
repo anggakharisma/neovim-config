@@ -114,7 +114,28 @@ require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach
 }
 
-require'lspconfig'.csharp_ls.setup{
+require'lspconfig'['csharp_ls'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+
+require'lspconfig'['cssls'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+require'lspconfig'['cssmodules_ls'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+require'lspconfig'['tailwindcss'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+require'lspconfig'.volar.setup{
   capabilities = capabilities,
   on_attach = on_attach
 }
