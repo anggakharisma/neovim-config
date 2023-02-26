@@ -119,7 +119,6 @@ require'lspconfig'['csharp_ls'].setup{
   on_attach = on_attach
 }
 
-
 require'lspconfig'['cssls'].setup{
   capabilities = capabilities,
   on_attach = on_attach
@@ -135,8 +134,12 @@ require'lspconfig'['tailwindcss'].setup{
   on_attach = on_attach
 }
 
-require'lspconfig'.volar.setup{
+require'lspconfig'['volar'].setup{
   capabilities = capabilities,
   on_attach = on_attach
 }
 
+require'lspconfig'['lua_ls'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach
+}
