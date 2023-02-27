@@ -1,5 +1,4 @@
 vim.g.mapleader = ','
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
@@ -37,6 +36,8 @@ vim.cmd("hi NonText guifg=NONE")
 vim.cmd("hi DiffAdd guibg=NONE guifg=#60ff60")
 vim.cmd("hi DiffChange guibg=NONE guifg=#60ff60")
 vim.cmd("hi DiffDelete guibg=NONE guifg=red")
+
+vim.cmd("set textwidth=80")
 
 -- Fillchars
 vim.opt.fillchars = {

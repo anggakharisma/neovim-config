@@ -7,6 +7,15 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
 
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+      }
+    end
+  }
+
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'lewis6991/gitsigns.nvim'
 
@@ -42,6 +51,7 @@ require('packer').startup(function(use)
 
     use 'NvChad/nvim-colorizer.lua'
   }
+  use 'windwp/nvim-ts-autotag'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -53,10 +63,10 @@ require("nvim-tree").setup({
 })
 
 require("colorizer").setup()
-require'bufferline'.setup({
+require 'bufferline'.setup({
   options = {
     separator_style = "thick",
-    offsets = {{filetype = "NvimTree", text = "Directory", text_align = "center"}},
+    offsets = { { filetype = "NvimTree", text = "Directory", text_align = "center" } },
   },
 })
 require('Comment').setup()
