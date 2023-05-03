@@ -148,3 +148,8 @@ require'lspconfig'['eslint'].setup{
   capabilities = capabilities,
   on_attach = on_attach
 }
+
+require'lspconfig'['emmet_ls'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach
+}
