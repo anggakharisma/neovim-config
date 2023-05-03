@@ -37,5 +37,4 @@ vim.cmd('nnoremap <M-h>    :vertical resize -2<CR>')
 vim.cmd('nnoremap <M-l>    :vertical resize +2<CR>')
 
 vim.cmd("nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>")
-vim.cmd(
-  "nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>")
+vim.cmd("nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>")

@@ -5,8 +5,8 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-
+  use 'hrsh7th/nvim-cmp' use { "ellisonleao/gruvbox.nvim" }
+  use 'folke/tokyonight.nvim'
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
@@ -19,17 +19,34 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'lewis6991/gitsigns.nvim'
 
-
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
   use 'tpope/vim-fugitive'
-
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  -- use 'vim-airline/vim-airline'
+  -- use 'vim-airline/vim-airline-themes'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   use 'mfussenegger/nvim-jdtls'
 
-  use 'numToStr/Comment.nvim'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   use "lukas-reineke/lsp-format.nvim"
 
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
@@ -61,6 +78,8 @@ end)
 require("nvim-tree").setup({
   update_cwd = true,
 })
+-- vim.cmd([[colorscheme gruvbox]])
+ vim.cmd([[colorscheme tokyonight-night]])
 
 require("colorizer").setup()
 require 'bufferline'.setup({
@@ -74,16 +93,20 @@ require('lsp-format').setup()
 require('nvim-autopairs').setup()
 require('gitsigns').setup()
 
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#013d4f gui=nocombine]]
-
-require("indent_blankline").setup {
-  space_char_blankline = " ",
-  char_highlight_list = {
-    "IndentBlanklineIndent1"
-  }
-}
-
 local function open_nvim_tree()
   require("nvim-tree.api").tree.open()
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+local signs = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " "
+}
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
+
