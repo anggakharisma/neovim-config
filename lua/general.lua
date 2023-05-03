@@ -1,7 +1,6 @@
 vim.g.mapleader = ','
 vim.o.background = "dark" -- or "light" for light mode
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.o.updatetime = 300

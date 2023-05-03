@@ -79,7 +79,7 @@ require("nvim-tree").setup({
   update_cwd = true,
 })
 -- vim.cmd([[colorscheme gruvbox]])
- vim.cmd([[colorscheme tokyonight-night]])
+vim.cmd([[colorscheme tokyonight-night]])
 
 require("colorizer").setup()
 require 'bufferline'.setup({
@@ -109,4 +109,3 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end
-
