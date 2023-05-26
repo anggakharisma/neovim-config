@@ -1,6 +1,13 @@
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
+
+
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    'neovim/nvim-lspconfig'
+  }
+
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -76,7 +83,10 @@ require('packer').startup(function(use)
 end)
 
 require("nvim-tree").setup({
-  update_cwd = true,
+  hijack_directories = {
+    enable = true,
+    auto_open = false,
+  },
 })
 -- vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[colorscheme tokyonight-night]])

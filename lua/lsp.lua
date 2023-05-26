@@ -1,6 +1,11 @@
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
 
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "csharp_ls", "cssls", "cssmodules_ls", "tailwindcss", "volar", "eslint", "emmet_ls" },
+}
+
 cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
@@ -15,8 +20,8 @@ cmp.setup({
     end,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -103,53 +108,12 @@ end
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local servers =   { 'tsserver', 'rust_analyzer', 'csharp_ls', 'cssls', 'cssmodules_ls', 'tailwindcss', 'volar', 'lua_ls', 'eslint', 'emmet_ls', }
 
-require('lspconfig')['tsserver'].setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
+for _, lsp in ipairs(servers) do
+  require 'lspconfig'[lsp].setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+end
 
-require('lspconfig')['rust_analyzer'].setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['csharp_ls'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['cssls'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['cssmodules_ls'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['tailwindcss'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['volar'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['lua_ls'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['eslint'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
-
-require'lspconfig'['emmet_ls'].setup{
-  capabilities = capabilities,
-  on_attach = on_attach
-}
