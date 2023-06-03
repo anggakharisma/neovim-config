@@ -108,7 +108,7 @@ end
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers =   { 'tsserver', 'rust_analyzer', 'csharp_ls', 'cssls', 'cssmodules_ls', 'tailwindcss', 'volar', 'lua_ls', 'eslint', 'emmet_ls', }
+local servers =   { 'tsserver', 'rust_analyzer', 'csharp_ls', 'cssls', 'cssmodules_ls', 'tailwindcss', 'volar', 'lua_ls', 'eslint', 'emmet_ls', 'gopls' }
 
 for _, lsp in ipairs(servers) do
   require 'lspconfig'[lsp].setup {
