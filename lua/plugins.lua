@@ -80,6 +80,9 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end}
 end)
 
 require("nvim-tree").setup({

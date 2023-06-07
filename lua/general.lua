@@ -1,6 +1,7 @@
 vim.g.mapleader = ','
 vim.o.background = "dark" -- or "light" for light mode
-vim.g.loaded_netrw = 1 vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.o.updatetime = 300
@@ -14,12 +15,15 @@ vim.cmd('set autoindent')
 vim.cmd('set number relativenumber')
 vim.cmd('set nu rnu')
 
-
 vim.cmd('set undofile')
 vim.cmd('set undodir=~/.vim/undodir')
 vim.cmd('set cursorline')
 
-vim.cmd("set textwidth=80")
+vim.cmd('set textwidth=80')
+vim.cmd('set wrapmargin=0')
+vim.cmd('set wrap')
+vim.cmd('set fo+=t')
+vim.cmd('set linebreak')
 
 -- Fillchars
 vim.opt.fillchars = {
@@ -38,8 +42,8 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -54,18 +58,18 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },

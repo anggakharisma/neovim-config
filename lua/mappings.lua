@@ -27,8 +27,8 @@ map('n', '<leader>w', ':w<CR>')
 map('n', '<C-q>', ':q!<CR>')
 
 -- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
+map('n', '<C-n>', ':NvimTreeToggle<CR>')       -- open/close
+map('n', '<leader>f', ':NvimTreeRefresh<CR>')  -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
 
 vim.cmd('nnoremap <M-j>    :resize -2<CR>')
@@ -37,4 +37,5 @@ vim.cmd('nnoremap <M-h>    :vertical resize -2<CR>')
 vim.cmd('nnoremap <M-l>    :vertical resize +2<CR>')
 
 vim.cmd("nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>")
-vim.cmd("nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>")
+vim.cmd(
+"nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>")

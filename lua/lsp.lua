@@ -3,14 +3,14 @@ local cmp = require 'cmp'
 
 require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "csharp_ls", "cssls", "cssmodules_ls", "tailwindcss", "volar", "eslint", "emmet_ls", "gopls" },
+  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "csharp_ls", "cssls", "cssmodules_ls", "tailwindcss",
+    "volar", "eslint", "emmet_ls", "gopls" },
 }
 
 cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
-  },
-  snippet = {
+  }, snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
@@ -108,7 +108,8 @@ end
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers =   { 'tsserver', 'rust_analyzer', 'csharp_ls', 'cssls', 'cssmodules_ls', 'tailwindcss', 'volar', 'lua_ls', 'eslint', 'emmet_ls', 'gopls' }
+local servers = { "lua_ls", "rust_analyzer", "tsserver", "csharp_ls", "cssls", "cssmodules_ls", "tailwindcss", "volar",
+  "eslint", "emmet_ls", "gopls" }
 
 for _, lsp in ipairs(servers) do
   require 'lspconfig'[lsp].setup {
@@ -116,4 +117,3 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach
   }
 end
-
