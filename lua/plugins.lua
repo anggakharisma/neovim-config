@@ -12,7 +12,8 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp' use { "ellisonleao/gruvbox.nvim" }
+  use 'hrsh7th/nvim-cmp'
+  use { "ellisonleao/gruvbox.nvim" }
   use 'folke/tokyonight.nvim'
   use {
     "folke/trouble.nvim",
@@ -29,7 +30,10 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
-  use 'airblade/vim-rooter'
+  use {
+    'notjedi/nvim-rooter.lua',
+    config = function() require 'nvim-rooter'.setup() end
+  }
   use 'tpope/vim-fugitive'
   -- use 'vim-airline/vim-airline'
   -- use 'vim-airline/vim-airline-themes'
@@ -42,7 +46,7 @@ require('packer').startup(function(use)
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   }
   use "lukas-reineke/lsp-format.nvim"
@@ -71,17 +75,20 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+  use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
     require('git-conflict').setup()
-  end}
+  end }
 end)
 
 require("nvim-tree").setup({
-  hijack_directories = {
+  update_cwd = true,
+  update_focused_file = {
     enable = true,
-    auto_open = false,
+    update_cwd = true
   },
 })
+
+require("nvim-rooter").setup()
 -- vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[colorscheme tokyonight-night]])
 
@@ -103,13 +110,13 @@ end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 local signs = {
-    Error = " ",
-    Warn = " ",
-    Hint = " ",
-    Info = " "
+  Error = " ",
+  Warn = " ",
+  Hint = " ",
+  Info = " "
 }
 
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
