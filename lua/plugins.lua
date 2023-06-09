@@ -29,16 +29,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  use 'airblade/vim-rooter'
   use 'tpope/vim-fugitive'
   -- use 'vim-airline/vim-airline'
   -- use 'vim-airline/vim-airline-themes'
