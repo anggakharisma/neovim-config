@@ -18,7 +18,6 @@ vim.cmd('set nu rnu')
 vim.cmd('set undofile')
 vim.cmd('set undodir=~/.vim/undodir')
 vim.cmd('set cursorline')
-
 vim.cmd('set textwidth=80')
 vim.cmd('set wrapmargin=0')
 vim.cmd('set wrap')

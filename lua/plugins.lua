@@ -1,7 +1,6 @@
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -89,7 +88,7 @@ require("nvim-tree").setup({
 })
 
 require("nvim-rooter").setup()
--- vim.cmd([[colorscheme gruvbox]])
+--vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[colorscheme tokyonight-night]])
 
 require("colorizer").setup()
