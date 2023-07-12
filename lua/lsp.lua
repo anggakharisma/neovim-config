@@ -4,7 +4,7 @@ local cmp = require 'cmp'
 require("mason").setup()
 require("mason-lspconfig").setup {
   ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "cssls", "cssmodules_ls", "tailwindcss",
-    "volar", "eslint", "emmet_ls", "gopls", "goimports", "yamlls" },
+    "volar", "eslint", "emmet_ls", "gopls", "yamlls" },
 }
 
 cmp.setup({
