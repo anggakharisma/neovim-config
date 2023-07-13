@@ -107,9 +107,29 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
--- Set up lspconfig.
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers = { "lua_ls", "rust_analyzer", "tsserver", "cssls", "cssmodules_ls", "tailwindcss", "volar",
+require 'lspconfig'['tsserver'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
+  }
+}
+
+-- Set up lspconfig.
+local servers = { "lua_ls", "rust_analyzer", "cssls", "cssmodules_ls", "tailwindcss", "volar",
   "eslint", "emmet_ls", "gopls", "yamlls" }
 
 for _, lsp in ipairs(servers) do
