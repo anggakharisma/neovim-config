@@ -12,6 +12,8 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use { "ellisonleao/gruvbox.nvim" }
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim'
   use {
     "folke/trouble.nvim",
@@ -88,7 +90,8 @@ require("nvim-tree").setup({
 
 require("nvim-rooter").setup()
 --vim.cmd([[colorscheme gruvbox]])
-vim.cmd([[colorscheme tokyonight-night]])
+-- vim.cmd([[colorscheme tokyonight-night]])
+vim.cmd([[colorscheme catppuccin-mocha]])
 
 require("colorizer").setup()
 require 'bufferline'.setup({
