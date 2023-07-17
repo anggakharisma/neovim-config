@@ -14,6 +14,7 @@ vim.cmd('set autoindent expandtab tabstop=2 shiftwidth=2')
 vim.cmd('set autoindent')
 vim.cmd('set number relativenumber')
 vim.cmd('set nu rnu')
+vim.cmd('set clipboard+=unnamedplus')
 
 vim.cmd('set undofile')
 vim.cmd('set undodir=~/.vim/undodir')
