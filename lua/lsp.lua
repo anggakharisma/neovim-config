@@ -3,7 +3,7 @@ local cmp = require 'cmp'
 
 require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "cssls", "cssmodules_ls", "tailwindcss",
+  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "cssls", "cssmodules_ls", "tailwindcss", "intelephense",
     "volar", "eslint", "emmet_ls", "gopls", "yamlls", "jedi_language_server" },
 }
 
@@ -110,7 +110,7 @@ end
 local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = {vim.api.nvim_buf_get_name(0)},
+    arguments = { vim.api.nvim_buf_get_name(0) },
     title = ""
   }
   vim.lsp.buf.execute_command(params)
@@ -129,7 +129,7 @@ require 'lspconfig'['tsserver'].setup {
 }
 
 -- Set up lspconfig.
-local servers = { "lua_ls", "rust_analyzer", "cssls", "cssmodules_ls", "tailwindcss", "volar",
+local servers = { "lua_ls", "rust_analyzer", "cssls", "cssmodules_ls", "tailwindcss", "volar",  "intelephense",
   "eslint", "emmet_ls", "gopls", "yamlls", "jedi_language_server" }
 
 for _, lsp in ipairs(servers) do
