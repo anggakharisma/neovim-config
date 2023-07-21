@@ -37,7 +37,6 @@ vim.opt.fillchars = {
   foldclose = "▸",
 }
 
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
