@@ -10,7 +10,7 @@ vim.incsearch = false
 vim.g.nvim_tree_respect_buf_cwd = 1
 vim.opt.completeopt = "menu,menuone,noselect"
 
-vim.cmd('set autoindent expandtab tabstop=2 shiftwidth=2')
+vim.cmd('set autoindent expandtab tabstop=4 shiftwidth=4')
 vim.cmd('set autoindent')
 vim.cmd('set number relativenumber')
 vim.cmd('set nu rnu')
